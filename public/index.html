@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Dragon Dash Duel</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <div class="eyebrow">ONLINE MULTIPLAYER</div>
+        <h1>🐉 Dragon Dash Duel</h1>
+        <p>Jump. Survive. Outlast everyone.</p>
+      </div>
+      <div class="badge">BRUTAL MODE</div>
+    </header>
+
+    <section id="lobby" class="card">
+      <h2>Enter the arena</h2>
+      <input id="name" maxlength="16" placeholder="Your name" value="Player">
+      <div class="row">
+        <button id="create">Create Room</button>
+        <input id="room" maxlength="6" placeholder="Room code">
+        <button id="join">Join</button>
+      </div>
+      <p class="hint">Desktop: Space / ↑ to jump. Mobile: tap the game. Everyone must press Ready.</p>
+      <div id="error" class="error"></div>
+    </section>
+
+    <section id="gamePanel" class="hidden">
+      <div class="topbar card">
+        <div>Room <strong id="roomCode">------</strong></div>
+        <div id="status">Waiting for players…</div>
+        <button id="ready">Ready</button>
+      </div>
+
+      <div class="card arenaWrap">
+        <canvas id="game" width="1200" height="520"></canvas>
+        <div id="message" class="overlay"></div>
+      </div>
+
+      <div class="card players">
+        <h3>Players</h3>
+        <div id="playerList"></div>
+      </div>
+    </section>
+
+    <footer>Built with HTML Canvas + Node.js + WebSocket</footer>
+  </main>
+  <script src="/game.js"></script>
+</body>
+</html>
